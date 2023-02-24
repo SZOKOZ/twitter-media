@@ -9,8 +9,8 @@ module.exports = class APIClient {
         this.oauth = oauth;
     }
 
-    uploadImage(buffer) {
-        return this._request({ formData: { media: buffer } });
+    uploadImage(buffer, owners) {
+        return this._request({ formData: { media: buffer, additional_owners: owners } });
     }
 
     uploadVideo(buffer, chunkSize) {
